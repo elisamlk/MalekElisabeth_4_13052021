@@ -20,14 +20,14 @@ function launchModal() {
   modalbg.style.display = "block";
 }
 
-// Issues
+// Close Modal
 
 const closeBtn = document.querySelector(".close");
+
 closeBtn.addEventListener("click", closeModal);
-function closeModal(){
+
+function closeModal() {
   modalbg.style.display = "none";
 }
-
-
 
 
