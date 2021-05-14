@@ -3,6 +3,7 @@ const form = document.querySelector(".form");
 let regex = /^[A-Za-z0-9]{1,}/;
 let firstName = document.getElementById("first");
 let firstError = document.querySelector(".first-error");
+let lastName = document.getElementById("last");
 
 function checkInfo() {
   if (firstName.value.trim() == "") {
