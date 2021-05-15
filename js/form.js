@@ -7,8 +7,11 @@ let lastName = document.getElementById("last");
 let lastError = document.querySelector(".last-error");
 let email = document.getElementById("email");
 let emailError = document.querySelector(".email-error");
+let emailRegex = /.+@.+\..+/;
 let birthdate = document.getElementById("birthdate");
 let birthdateError = document.querySelector(".birthdate-error");
+let tournamentNumber = document.getElementById("quantity");
+let tournamentNumberError = document.querySelector(".tournament-error");
 
 function checkFirstName() {
   if (firstName.value.trim() == "") {
@@ -30,12 +33,41 @@ function checkLastName() {
   return true;
 }
 
-function checkEmail() {};
+function checkEmail() {
+  if (email.value.trim() == "") {
+    email.style.borderColor = "red";
+    emailError.innerHTML = "Le format attendu n'est pas correct.";
+    return false;
+  }
+  return true;
+}
 
-function checkBirthdate(){};
+function checkBirthdate() {
+  if (birthdate.value.trim() == "") {
+    birthdate.style.borderColor = "red";
+    birthdateError.innerHTML = "Veuillez renseigner votre date de naissance.";
+    return false;
+  }
+  return true;
+}
+
+function checkTournamentNumber() {
+  if (tournamentNumber.value.trim() == "") {
+    tournamentNumber.style.borderColor = "red";
+    tournamentNumberError.innerHTML = "Veuillez selectionner un nombre.";
+    return false;
+  }
+  return true;
+}
 
 form.addEventListener("submit", function (e) {
-  if (checkFirstName() == false != checkLastName() == false) {
+  if (
+    checkFirstName() == false ||
+    checkLastName() == false ||
+    checkEmail() == false ||
+    checkBirthdate() == false ||
+    checkTournamentNumber() == false
+  ) {
     e.preventDefault();
   }
 });
