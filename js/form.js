@@ -12,6 +12,9 @@ let birthdate = document.getElementById("birthdate");
 let birthdateError = document.querySelector(".birthdate-error");
 let tournamentNumber = document.getElementById("quantity");
 let tournamentNumberError = document.querySelector(".tournament-error");
+let city = document.getElementsByName("location");
+let cityError = document.querySelector(".city-error");
+console.log(city);
 
 function checkFirstName() {
   if (firstName.value.trim() == "") {
@@ -54,10 +57,21 @@ function checkBirthdate() {
 function checkTournamentNumber() {
   if (tournamentNumber.value.trim() == "") {
     tournamentNumber.style.borderColor = "red";
-    tournamentNumberError.innerHTML = "Veuillez selectionner un nombre.";
+    tournamentNumberError.innerHTML = "Veuillez entrer un nombre.";
     return false;
   }
   return true;
+}
+
+function checkCity() {
+  for (let i = 0; i < city.length; i++) {
+    //console.log(city[i].checked);
+    if (city[i].checked == true) {
+      return true;
+    }
+  }
+  cityError.innerHTML = "Veuillez sélectionner une ville.";
+  return false;
 }
 
 form.addEventListener("submit", function (e) {
@@ -66,7 +80,8 @@ form.addEventListener("submit", function (e) {
     checkLastName() == false ||
     checkEmail() == false ||
     checkBirthdate() == false ||
-    checkTournamentNumber() == false
+    checkTournamentNumber() == false ||
+    checkCity() == false
   ) {
     e.preventDefault();
   }
