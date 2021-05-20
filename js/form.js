@@ -33,7 +33,7 @@ function checkEmail() {
   let email = document.getElementById("email");
   let emailError = document.querySelector(".email-error");
   let emailRegex = /.+@.+\..+/;
-  if (email.value.trim() == "") {
+  if (email.value.trim() == "" || !email.value.match(emailRegex)) {
     email.style.borderColor = "#fe142f;";
     emailError.innerHTML = "Le format attendu n'est pas correct.";
     return false;
@@ -80,29 +80,14 @@ function checkCity() {
   return false;
 }
 
-function checkFormValidation(){
-  let validation = document.getElementsByClassName(".validation");
-  console.log(validation.isConnected);
-  if(!validation.autofocus){
-    return false;
-  }
-  return true;
-}
-
-checkFormValidation();
-
-
-
-
 form.addEventListener("submit", function (e) {
   if (
     checkFirstName() == false ||
     checkLastName() == false ||
     checkEmail() == false ||
     checkBirthdate() == false ||
-    checkTournamentNumber() == false 
-    //checkCity() == false ||
-    //checkFormValidation == false
+    checkTournamentNumber() == false ||
+    checkCity() == false
   ) {
     e.preventDefault();
   }
