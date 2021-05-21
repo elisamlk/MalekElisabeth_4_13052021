@@ -70,15 +70,19 @@ function checkTournamentNumber() {
 }
 
 function checkCity() {
+  let city = document.getElementsByName("location");
+  let cityError = document.querySelector(".city-error");
   for (let i = 0; i < city.length; i++) {
-    console.log(city[i].checked);
     if (city[i].checked == true) {
+      cityError.style.display="none";
       return true;
     }
   }
   cityError.innerHTML = "Veuillez sélectionner une ville.";
   return false;
 }
+
+checkCity();
 
 form.addEventListener("submit", function (e) {
   if (
