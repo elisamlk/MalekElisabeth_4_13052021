@@ -86,6 +86,19 @@ function checkCity() {
   return false;
 }
 
+function checkFormCondition() {
+  let condition = document.getElementById("checkbox1");
+  let conditionError = document.querySelector(".condition-error");
+  console.log(condition.checked);
+  if (!condition.checked == true) {
+    conditionError.innerHTML = "Veuillez accepter les conditions d'utilisation";
+    return false;
+  }
+  return true;
+}
+
+
+
 form.addEventListener("submit", function (e) {
   if (
     checkFirstName() == false ||
@@ -93,7 +106,8 @@ form.addEventListener("submit", function (e) {
     checkEmail() == false ||
     checkBirthdate() == false ||
     checkTournamentNumber() == false ||
-    checkCity() == false
+    checkCity() == false ||
+    checkFormCondition() == false
   ) {
     e.preventDefault();
   }
