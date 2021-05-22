@@ -1,17 +1,25 @@
 // Element du DOM
 const form = document.querySelector(".form");
 
+function isValid(validColor, deleteMessage) {
+  validColor.style.borderColor = "green";
+  deleteMessage.style.display = "none";
+}
+
+function isNotValid(errorColor) {
+  errorColor.style.borderColor = "#fe142f";
+}
+
 function checkFirstName() {
   let firstName = document.getElementById("first");
   let firstError = document.querySelector(".first-error");
   if (firstName.value.trim().length < 2) {
-    firstName.style.borderColor = "#fe142f";
+    isNotValid(firstName);
     firstError.innerHTML =
       "Veuillez entrer 2 caractères ou plus pour le champ du prénom.";
     return false;
   }
-  firstName.style.borderColor = "green";
-  firstError.style.display = "none";
+  isValid(firstName, firstError);
   return true;
 }
 
@@ -19,13 +27,12 @@ function checkLastName() {
   let lastName = document.getElementById("last");
   let lastError = document.querySelector(".last-error");
   if (lastName.value.trim().length < 2) {
-    lastName.style.borderColor = "#fe142f";
+    isNotValid(lastName);
     lastError.innerHTML =
       "Veuillez entrer 2 caractères ou plus pour le champ du nom.";
     return false;
   }
-  lastName.style.borderColor = "green";
-  lastError.style.display = "none";
+  isValid(lastName, lastError);
   return true;
 }
 
@@ -34,12 +41,11 @@ function checkEmail() {
   let emailError = document.querySelector(".email-error");
   let emailRegex = /.+@.+\..+/;
   if (email.value.trim() == "" || !email.value.match(emailRegex)) {
-    email.style.borderColor = "#fe142f;";
+    isNotValid(email);
     emailError.innerHTML = "Le format attendu n'est pas correct.";
     return false;
   }
-  email.style.borderColor = "green";
-  emailError.style.display = "none";
+  isValid(email, emailError);
   return true;
 }
 
@@ -47,12 +53,11 @@ function checkBirthdate() {
   let birthdate = document.getElementById("birthdate");
   let birthdateError = document.querySelector(".birthdate-error");
   if (birthdate.value.trim() == "") {
-    birthdate.style.borderColor = "#fe142f";
+    isNotValid(birthdate);
     birthdateError.innerHTML = "Veuillez renseigner votre date de naissance.";
     return false;
   }
-  birthdate.style.borderColor = "green";
-  birthdateError.style.display = "none";
+  isValid(birthdate, birthdateError);
   return true;
 }
 
@@ -60,12 +65,11 @@ function checkTournamentNumber() {
   let tournamentNumber = document.getElementById("quantity");
   let tournamentNumberError = document.querySelector(".tournament-error");
   if (tournamentNumber.value.trim() == "") {
-    tournamentNumber.style.borderColor = "#fe142f";
+    isNotValid(tournamentNumber);
     tournamentNumberError.innerHTML = "Veuillez entrer un nombre.";
     return false;
   }
-  tournamentNumber.style.borderColor = "green";
-  tournamentNumberError.style.display = "none";
+  isValid(tournamentNumber, tournamentNumberError);
   return true;
 }
 
@@ -74,15 +78,13 @@ function checkCity() {
   let cityError = document.querySelector(".city-error");
   for (let i = 0; i < city.length; i++) {
     if (city[i].checked == true) {
-      cityError.style.display="none";
+      cityError.style.display = "none";
       return true;
     }
   }
   cityError.innerHTML = "Veuillez sélectionner une ville.";
   return false;
 }
-
-checkCity();
 
 form.addEventListener("submit", function (e) {
   if (
