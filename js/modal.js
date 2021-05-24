@@ -24,8 +24,10 @@ function launchModal() {
 // Close Modal
 
 const closeBtn = document.querySelector(".close");
+const closeSubmit = document.querySelector(".close-submit");
 
 closeBtn.addEventListener("click", closeModal);
+closeSubmit.addEventListener("click", closeModal);
 
 function closeModal() {
   modalbg.style.display = "none";

@@ -1,5 +1,5 @@
 // Element du DOM
-const form = document.querySelector(".form");
+let form = document.querySelector(".form");
 
 function isValid(validColor, deleteMessage) {
   validColor.style.borderColor = "green";
