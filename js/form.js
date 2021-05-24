@@ -98,11 +98,11 @@ function checkFormCondition() {
 }
 
 // Confirmation Message
-function displayConfirmationMessage(){
-  let confirmationMessage = document.getElementsByClassName("container-message");
-  confirmationMessage.style.display="block";
+function displayConfirmationMessage() {
+  let confirmationMessage = document.querySelector(".container-message");
+  form.style.display = "none";
+  confirmationMessage.style.display = "block";
 }
-
 
 form.addEventListener("submit", function (e) {
   if (
@@ -115,15 +115,8 @@ form.addEventListener("submit", function (e) {
     checkFormCondition() == false
   ) {
     e.preventDefault();
-  } else if (
-    checkFirstName() == true &&
-    checkLastName() == true &&
-    checkEmail() == true &&
-    checkBirthdate() == true &&
-    checkTournamentNumber() == true &&
-    checkCity() == true &&
-    checkFormCondition() == true
-  ) {
+  } else {
+    e.preventDefault();
     displayConfirmationMessage();
   }
 });
