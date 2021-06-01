@@ -1,14 +1,18 @@
 // Element du DOM
 let form = document.querySelector(".form");
 
+// Couleur à ajouter si les champs du formulaire sont corrects
 function isValid(validColor, deleteMessage) {
   validColor.style.borderColor = "green";
   deleteMessage.style.display = "none";
 }
 
+// Couleur à ajouter si les champs dont erronnés 
 function isNotValid(errorColor) {
   errorColor.style.borderColor = "#fe142f";
 }
+
+// Fonctions pour vérifier si les champs sont correctement renseignés
 
 function checkFirstName() {
   let firstName = document.getElementById("first");
@@ -97,13 +101,14 @@ function checkFormCondition() {
   return true;
 }
 
-// Confirmation Message
+// Message de confirmation
 function displayConfirmationMessage() {
   let confirmationMessage = document.querySelector(".container-message");
   form.style.display = "none";
   confirmationMessage.style.display = "block";
 }
 
+// Ecoute de l'évenement submit qui affiche le message de confirmation si touts les champs sont corrects
 form.addEventListener("submit", function (e) {
   if (
     checkFirstName() == false ||
