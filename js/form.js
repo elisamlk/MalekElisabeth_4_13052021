@@ -69,7 +69,7 @@ function checkBirthdate() {
 function checkTournamentNumber() {
   let tournamentNumber = document.getElementById("quantity");
   let tournamentNumberError = document.querySelector(".tournament-error");
-  if (tournamentNumber.value.trim() == "" || isNaN(tournamentNumber.value.trim() === true)) {
+  if (tournamentNumber.value.trim() == "" || isNaN(tournamentNumber.value == true)) {
     isNotValid(tournamentNumber);
     tournamentNumberError.innerHTML = "Veuillez entrer un nombre.";
     return false;
