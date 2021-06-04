@@ -2,11 +2,11 @@
 let form = document.querySelector(".form");
 
 // Fonctions pour vérifier si les champs sont correctement renseignés
-
+let regexNumber = /^([^0-9]*)$/;
 function checkFirstName() {
   let firstName = document.getElementById("first");
   let firstError = document.querySelector(".first-error");
-  if (firstName.value.trim().length < 2) {
+  if (firstName.value.trim().length < 2 || !firstName.value.match(regexNumber)) {
     isNotValid(firstName);
     firstError.innerHTML =
       "Veuillez entrer 2 caractères ou plus pour le champ du prénom.";
@@ -19,7 +19,7 @@ function checkFirstName() {
 function checkLastName() {
   let lastName = document.getElementById("last");
   let lastError = document.querySelector(".last-error");
-  if (lastName.value.trim().length < 2) {
+  if (lastName.value.trim().length < 2 || !lastName.value.match(regexNumber)) {
     isNotValid(lastName);
     lastError.innerHTML =
       "Veuillez entrer 2 caractères ou plus pour le champ du nom.";
