@@ -55,27 +55,27 @@
           <form class="form" name="reserve" action="index.html" method="get">
             <div class="formData">
               <label for="first">Prénom</label><br>
-              <input class="text-control" type="text" id="first" name="first"/><br>
+              <input class="text-control" type="text" id="first" name="first" placeholder="Prénom"/><br>
               <span class="first-error error"></span>
             </div>
             <div class="formData">
               <label for="last">Nom</label><br>
-              <input class="text-control" type="text" id="last" name="last" /><br>
+              <input class="text-control" type="text" id="last" name="last" placeholder="Nom" /><br>
               <span class="last-error error"></span>
             </div>
             <div class="formData">
               <label for="email">E-mail</label><br>
-              <input class="text-control" id="email" name="email" /><br>
+              <input class="text-control" id="email" name="email" placeholder="exemple@email.com" /><br>
               <span class="email-error error"></span>
             </div>
             <div class="formData">
               <label for="birthdate">Date de naissance</label><br>
-              <input class="text-control" type="text" id="birthdate" name="birthdate" /><br>
+              <input class="text-control" type="text" id="birthdate" name="birthdate" placeholder="JJ/MM/AAAA"/><br>
               <span class="birthdate-error error"></span>
             </div>
             <div class="formData">
               <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label><br>
-              <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99">
+              <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99" placeholder="0">
               <span class="tournament-error error"></span>
             </div>
             <p class="text-label">Quelles villes ?</p>
@@ -137,6 +137,7 @@
       Copyright 2014 - 2020, GameOn Inc.
     </p>
   </footer>
+  <script src="js/function.js"></script>
   <script src="js/modal.js"></script>
   <script src="js/form.js"></script>
 </body>

@@ -55,8 +55,8 @@ img {
   display: block;
   color: #000000;
   text-align: center;
-  padding: 12px 12px;
-  margin: 5px;
+  padding: 0.75rem 0.75rem;
+  margin: 0.3125rem;
   text-decoration: none;
   font-size: 20px;
   font-family: Roboto, sans-serif;
@@ -65,7 +65,7 @@ img {
 .topnav a:hover {
   background-color: #ff0000;
   color: #ffffff;
-  border-radius: 15px;
+  border-radius: 0.9375rem;
 }
 
 .topnav a.active {
@@ -79,28 +79,37 @@ img {
 }
 
 @media screen and (max-width: 768px) {
+  .topnav {
+    flex-wrap: wrap;
+  }
+
   .topnav a {
     display: none;
   }
+
   .topnav a.icon {
     float: right;
     display: block;
   }
-}
 
-@media screen and (max-width: 768px) {
   .topnav.responsive {
     position: relative;
   }
+
   .topnav.responsive .icon {
     position: absolute;
     right: 0;
     top: 0;
   }
+
   .topnav.responsive a {
     float: none;
     display: block;
     text-align: left;
+  }
+
+  .main-navbar {
+    margin-right: 40px;
   }
 }
 
@@ -195,13 +204,21 @@ main {
 
 .container-message {
   text-align: center;
-  margin-bottom: 20px;
+  background-color: #232323;
   display: none;
 }
 
 .container-message p {
+  margin-top: 40%;
   margin-bottom: 20px;
 }
+
+.container-message .close-submit {
+  margin-top: 50%;
+  margin-bottom: 40px;
+}
+
+
 
 label {
   font-family: var(--font-default);
@@ -560,7 +577,7 @@ footer {
   }
   */
   .topnav img {
-    width: 200px;
+    width: 150px;
   }
   .hero-content {
     padding: 0;
@@ -568,7 +585,7 @@ footer {
   .hero-headline {
     font-size: 2.5rem;
   }
-  .hero-text{
+  .hero-text {
     font-size: 1.5rem;
   }
 }
